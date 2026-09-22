@@ -1,0 +1,103 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+@theme {
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+.note-paper--plain {
+    background-color: rgb(255 255 255 / 0.98);
+    background-image: none;
+}
+
+.note-canvas {
+    --note-rhythm: 2rem;
+    --note-paper-offset: 3.5rem;
+}
+
+.note-canvas .note-content {
+    gap: var(--note-rhythm);
+}
+
+.note-canvas .note-text,
+.note-canvas .note-list,
+.note-canvas .note-quote,
+.note-canvas .checklist-label {
+    line-height: var(--note-rhythm);
+}
+
+.note-canvas .note-heading-1 {
+    line-height: calc(var(--note-rhythm) * 1.5);
+}
+
+.note-canvas .note-heading-2,
+.note-canvas .note-heading-3 {
+    line-height: var(--note-rhythm);
+}
+
+.note-canvas .note-paper--lined,
+.note-canvas.note-paper--lined {
+    background-position: 0 var(--note-paper-offset);
+}
+
+@media (min-width: 640px) {
+    .note-canvas {
+        --note-paper-offset: 4rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .note-canvas {
+        --note-paper-offset: 4.75rem;
+    }
+}
+
+.note-paper--lined {
+    background-color: rgb(255 255 255 / 0.96);
+    background-image: linear-gradient(to bottom, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+    background-size: 100% var(--note-rhythm, 2rem);
+}
+
+.note-paper--grid {
+    background-color: rgb(255 255 255 / 0.96);
+    background-image: linear-gradient(rgba(148, 163, 184, 0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+    background-size: var(--note-rhythm) var(--note-rhythm);
+    background-position: 0 var(--note-paper-offset);
+}
+
+.note-paper--dotted {
+    background-color: rgb(255 255 255 / 0.96);
+    background-image: radial-gradient(circle, rgba(148, 163, 184, 0.18) 1.2px, transparent 1.4px);
+    background-size: var(--note-rhythm) var(--note-rhythm);
+    background-position: 0 var(--note-paper-offset);
+}
+
+.dark .note-paper--plain {
+    background-color: rgb(15 23 42 / 0.98);
+}
+
+.dark .note-paper--lined {
+    background-color: rgb(15 23 42 / 0.96);
+    background-image: linear-gradient(to bottom, rgba(148, 163, 184, 0.16) 1px, transparent 1px);
+}
+
+.dark .note-paper--grid {
+    background-color: rgb(15 23 42 / 0.96);
+    background-image: linear-gradient(rgba(148, 163, 184, 0.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(148, 163, 184, 0.16) 1px, transparent 1px);
+    background-size: var(--note-rhythm) var(--note-rhythm);
+    background-position: 0 var(--note-paper-offset);
+}
+
+.dark .note-paper--dotted {
+    background-color: rgb(15 23 42 / 0.96);
+    background-image: radial-gradient(circle, rgba(148, 163, 184, 0.18) 1.2px, transparent 1.4px);
+    background-size: var(--note-rhythm) var(--note-rhythm);
+    background-position: 0 var(--note-paper-offset);
+}
